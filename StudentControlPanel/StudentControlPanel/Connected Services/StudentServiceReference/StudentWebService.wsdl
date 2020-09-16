@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Hello">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NoteEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="vize" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="final" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sonuc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NoteEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NoteDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NoteDeleteResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="NoteList">
+        <s:complexType />
+      </s:element>
+      <s:element name="NoteListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NoteListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteStudent">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteStudentResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="StudentList">
+        <s:complexType />
+      </s:element>
+      <s:element name="StudentListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StudentListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindNo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindNoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindNoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindTc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tcNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FindTcResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FindTcResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OgrenciKayit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OgrenciKayitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateListResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateChoose">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telefon" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateChooseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateButton">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="soyad" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ogrNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tcNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="telNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="students" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateButtonResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoginScreen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginScreenResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LoginConnect">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="loginPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginConnectResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloSoapIn">
+    <wsdl:part name="parameters" element="tns:Hello" />
+  </wsdl:message>
+  <wsdl:message name="HelloSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloResponse" />
+  </wsdl:message>
+  <wsdl:message name="NoteEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:NoteEntry" />
+  </wsdl:message>
+  <wsdl:message name="NoteEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:NoteEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="NoteDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:NoteDelete" />
+  </wsdl:message>
+  <wsdl:message name="NoteDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:NoteDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="NoteListSoapIn">
+    <wsdl:part name="parameters" element="tns:NoteList" />
+  </wsdl:message>
+  <wsdl:message name="NoteListSoapOut">
+    <wsdl:part name="parameters" element="tns:NoteListResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStudentSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteStudent" />
+  </wsdl:message>
+  <wsdl:message name="DeleteStudentSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="StudentListSoapIn">
+    <wsdl:part name="parameters" element="tns:StudentList" />
+  </wsdl:message>
+  <wsdl:message name="StudentListSoapOut">
+    <wsdl:part name="parameters" element="tns:StudentListResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindNameSoapIn">
+    <wsdl:part name="parameters" element="tns:FindName" />
+  </wsdl:message>
+  <wsdl:message name="FindNameSoapOut">
+    <wsdl:part name="parameters" element="tns:FindNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindNoSoapIn">
+    <wsdl:part name="parameters" element="tns:FindNo" />
+  </wsdl:message>
+  <wsdl:message name="FindNoSoapOut">
+    <wsdl:part name="parameters" element="tns:FindNoResponse" />
+  </wsdl:message>
+  <wsdl:message name="FindTcSoapIn">
+    <wsdl:part name="parameters" element="tns:FindTc" />
+  </wsdl:message>
+  <wsdl:message name="FindTcSoapOut">
+    <wsdl:part name="parameters" element="tns:FindTcResponse" />
+  </wsdl:message>
+  <wsdl:message name="OgrenciKayitSoapIn">
+    <wsdl:part name="parameters" element="tns:OgrenciKayit" />
+  </wsdl:message>
+  <wsdl:message name="OgrenciKayitSoapOut">
+    <wsdl:part name="parameters" element="tns:OgrenciKayitResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateListSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateList" />
+  </wsdl:message>
+  <wsdl:message name="UpdateListSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateListResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChooseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateChoose" />
+  </wsdl:message>
+  <wsdl:message name="UpdateChooseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateChooseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateButtonSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateButton" />
+  </wsdl:message>
+  <wsdl:message name="UpdateButtonSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateButtonResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginScreenSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginScreen" />
+  </wsdl:message>
+  <wsdl:message name="LoginScreenSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginScreenResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginConnectSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginConnect" />
+  </wsdl:message>
+  <wsdl:message name="LoginConnectSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginConnectResponse" />
+  </wsdl:message>
+  <wsdl:portType name="StudentWebServiceSoap">
+    <wsdl:operation name="Hello">
+      <wsdl:input message="tns:HelloSoapIn" />
+      <wsdl:output message="tns:HelloSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NoteEntry">
+      <wsdl:input message="tns:NoteEntrySoapIn" />
+      <wsdl:output message="tns:NoteEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NoteDelete">
+      <wsdl:input message="tns:NoteDeleteSoapIn" />
+      <wsdl:output message="tns:NoteDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NoteList">
+      <wsdl:input message="tns:NoteListSoapIn" />
+      <wsdl:output message="tns:NoteListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStudent">
+      <wsdl:input message="tns:DeleteStudentSoapIn" />
+      <wsdl:output message="tns:DeleteStudentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StudentList">
+      <wsdl:input message="tns:StudentListSoapIn" />
+      <wsdl:output message="tns:StudentListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindName">
+      <wsdl:input message="tns:FindNameSoapIn" />
+      <wsdl:output message="tns:FindNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindNo">
+      <wsdl:input message="tns:FindNoSoapIn" />
+      <wsdl:output message="tns:FindNoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTc">
+      <wsdl:input message="tns:FindTcSoapIn" />
+      <wsdl:output message="tns:FindTcSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OgrenciKayit">
+      <wsdl:input message="tns:OgrenciKayitSoapIn" />
+      <wsdl:output message="tns:OgrenciKayitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateList">
+      <wsdl:input message="tns:UpdateListSoapIn" />
+      <wsdl:output message="tns:UpdateListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChoose">
+      <wsdl:input message="tns:UpdateChooseSoapIn" />
+      <wsdl:output message="tns:UpdateChooseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateButton">
+      <wsdl:input message="tns:UpdateButtonSoapIn" />
+      <wsdl:output message="tns:UpdateButtonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginScreen">
+      <wsdl:input message="tns:LoginScreenSoapIn" />
+      <wsdl:output message="tns:LoginScreenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginConnect">
+      <wsdl:input message="tns:LoginConnectSoapIn" />
+      <wsdl:output message="tns:LoginConnectSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="StudentWebServiceSoap" type="tns:StudentWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Hello">
+      <soap:operation soapAction="http://tempuri.org/Hello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteEntry">
+      <soap:operation soapAction="http://tempuri.org/NoteEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteDelete">
+      <soap:operation soapAction="http://tempuri.org/NoteDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteList">
+      <soap:operation soapAction="http://tempuri.org/NoteList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStudent">
+      <soap:operation soapAction="http://tempuri.org/DeleteStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentList">
+      <soap:operation soapAction="http://tempuri.org/StudentList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindName">
+      <soap:operation soapAction="http://tempuri.org/FindName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNo">
+      <soap:operation soapAction="http://tempuri.org/FindNo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTc">
+      <soap:operation soapAction="http://tempuri.org/FindTc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OgrenciKayit">
+      <soap:operation soapAction="http://tempuri.org/OgrenciKayit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateList">
+      <soap:operation soapAction="http://tempuri.org/UpdateList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChoose">
+      <soap:operation soapAction="http://tempuri.org/UpdateChoose" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateButton">
+      <soap:operation soapAction="http://tempuri.org/UpdateButton" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginScreen">
+      <soap:operation soapAction="http://tempuri.org/LoginScreen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginConnect">
+      <soap:operation soapAction="http://tempuri.org/LoginConnect" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="StudentWebServiceSoap12" type="tns:StudentWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Hello">
+      <soap12:operation soapAction="http://tempuri.org/Hello" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteEntry">
+      <soap12:operation soapAction="http://tempuri.org/NoteEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteDelete">
+      <soap12:operation soapAction="http://tempuri.org/NoteDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NoteList">
+      <soap12:operation soapAction="http://tempuri.org/NoteList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStudent">
+      <soap12:operation soapAction="http://tempuri.org/DeleteStudent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StudentList">
+      <soap12:operation soapAction="http://tempuri.org/StudentList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindName">
+      <soap12:operation soapAction="http://tempuri.org/FindName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindNo">
+      <soap12:operation soapAction="http://tempuri.org/FindNo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FindTc">
+      <soap12:operation soapAction="http://tempuri.org/FindTc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OgrenciKayit">
+      <soap12:operation soapAction="http://tempuri.org/OgrenciKayit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateList">
+      <soap12:operation soapAction="http://tempuri.org/UpdateList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateChoose">
+      <soap12:operation soapAction="http://tempuri.org/UpdateChoose" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateButton">
+      <soap12:operation soapAction="http://tempuri.org/UpdateButton" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginScreen">
+      <soap12:operation soapAction="http://tempuri.org/LoginScreen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginConnect">
+      <soap12:operation soapAction="http://tempuri.org/LoginConnect" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StudentWebService">
+    <wsdl:port name="StudentWebServiceSoap" binding="tns:StudentWebServiceSoap">
+      <soap:address location="http://localhost:3203/StudentWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="StudentWebServiceSoap12" binding="tns:StudentWebServiceSoap12">
+      <soap12:address location="http://localhost:3203/StudentWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
